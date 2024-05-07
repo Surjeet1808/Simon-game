@@ -34,3 +34,12 @@ body{
 .overflesh{
     background-color: rgb(253, 85, 55);
 }
+#start-btn{
+    font-size: 1.2rem;
+    font-weight: 500;
+    padding: 0.8rem 1.5rem;
+    background-color: black;
+    color: white;
+    margin: 1rem;
+    border-radius: 1rem;
+}

@@ -5,19 +5,21 @@ let userseq=[];
 let gameseq=[];
 let colours=["red","green","yellow","purple"]
 let h2=document.querySelector("h2");
-document.addEventListener("keypress",function(){
-    console.log("started");
-    if(started==false){
-        started=true;
-        levelup();
-    }
-});
+// document.addEventListener("keypress",function(){
+//     console.log("started");
+//     if(started==false){
+//         started=true;
+//         levelup();
+//     }
+// });
 function resetgame(){
     started=false;
     gameseq=[];
     userseq=[];
     level=0;
 }
+
+
 function checkseq(){
     let idx=userseq.length-1;
     if(gameseq[idx]==userseq[idx]){
@@ -27,7 +29,7 @@ function checkseq(){
     }
     else{
         maxscore=Math.max(maxscore,level);
-        h2.innerText=`Game over ! Your Score: ${level} Max Score: ${maxscore} Press any key to restart`;
+        h2.innerText=`Game over ! Your Score: ${level} Max Score: ${maxscore} Press Start button to restart`;
         let btncontaner=document.querySelector("body");
         btncontaner.classList.add("overflesh");
     setTimeout(function(){
@@ -37,6 +39,8 @@ function checkseq(){
         resetgame();
     }
 }
+
+
 function levelup(){
     userseq=[];
     level++;
@@ -74,3 +78,15 @@ for(btn of btns){
     );
    
 }
+
+
+//adding start btn feature
+
+let start_btn=document.getElementById("start-btn");
+start_btn.addEventListener("click",function(){
+    console.log("started");
+    if(started==false){
+        started=true;
+        levelup();
+    }
+});
