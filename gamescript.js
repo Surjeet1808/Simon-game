@@ -78,15 +78,13 @@ for(btn of btns){
     );
    
 }
-
-
 //adding start btn feature
-
 let start_btn=document.getElementById("start-btn");
 start_btn.addEventListener("click",function(){
     console.log("started");
     if(started==false){
         started=true;
-        levelup();
+        userflesh(start_btn);
+        setTimeout(levelup,500);
     }
 });
